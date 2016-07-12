@@ -12,8 +12,6 @@ config :logger, level: :warn
 # Configure your database
 config :equiplent, Equiplent.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
   database: "equiplent_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
