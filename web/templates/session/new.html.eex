@@ -1,0 +1,7 @@
+<h1>Sign in</h1>
+
+<%= render "form.html",
+  changeset: @changeset,
+  conn: @conn,
+  action: session_path(@conn, :create),
+  button_text: "Sign in" %>

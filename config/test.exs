@@ -15,3 +15,6 @@ config :equiplent, Equiplent.Repo,
   database: "equiplent_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+# Start Hound for PhantomJs
+config :hound, driver: "phantomjs"

@@ -1,6 +1,7 @@
 defmodule Equiplent.User do
   use Equiplent.Web, :model
   import Comeonin.Bcrypt, only: [hashpwsalt: 1]
+  alias Equiplent.Password
 
   schema "users" do
     field :email, :string
@@ -32,11 +33,6 @@ defmodule Equiplent.User do
   end
 
   defp hash_password(changeset) do
-    if password = get_change(changeset, :password) do
-      changeset
-      |> put_change(:password_digest, hashpwsalt(password))
-    else
-      changeset
-    end
+    Password.encrypt(changeset)
   end
 end
