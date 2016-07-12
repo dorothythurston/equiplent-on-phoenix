@@ -5,13 +5,21 @@
   <% end %>
 
   <div id="user-email">
-    Email: <%= text_input f, :email %>
+    <label>Email</label>
+    <%= text_input f, :email %>
     <%= error_tag f, :email %>
   </div>
 
   <div id="user-password">
-    Password: <%= text_input f, :password_digest %>
+    <label>Password</label>
+    <%= password_input f, :password %>
     <%= error_tag f, :password %>
+  </div>
+
+  <div id="user-password-confirmation">
+    <label>Password Confirmation</label>
+    <%= password_input f, :password_confirmation %>
+    <%= error_tag f, :password_confirmation %>
   </div>
 
   <%= submit @button_text %>
