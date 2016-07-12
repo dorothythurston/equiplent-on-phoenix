@@ -1,0 +1,7 @@
+<h1>Sign up</h1>
+
+<%= render "form.html",
+  changeset: @changeset,
+  conn: @conn,
+  action: user_path(@conn, :create),
+  button_text: "Sign up" %>
