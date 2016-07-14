@@ -21,7 +21,7 @@
             <%= link "Log in", to: session_path(@conn, :new) %>
           <% end %>
         </nav>
-        <span class="logo"></span>
+        <span class="logo"><h2>Equiplent</h2></span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
