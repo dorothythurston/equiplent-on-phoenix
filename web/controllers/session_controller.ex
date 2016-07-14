@@ -6,7 +6,7 @@ defmodule Equiplent.SessionController do
   plug :scrub_params, "user" when action in [:create]
 
   def new(conn, _params) do
-    render conn, changeset: User.changeset(%User{})
+    render(conn, "new.html", changeset: User.changeset(%User{}))
   end
 
   def create(conn, %{"user" => user_params}) do

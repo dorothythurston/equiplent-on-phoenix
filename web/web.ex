@@ -52,6 +52,7 @@ defmodule Equiplent.Web do
       import Equiplent.Router.Helpers
       import Equiplent.ErrorHelpers
       import Equiplent.Gettext
+      import Equiplent.ViewHelpers
     end
   end
 

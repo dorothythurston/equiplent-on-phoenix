@@ -7,20 +7,33 @@ defmodule Equiplent.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+
+    if Mix.env == :test do
+      plug Equiplent.Plug.SessionBackdoor
+    end
   end
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
+  pipeline :require_authentication do
+    plug Equiplent.Plug.Authenticate
+  end
+
   scope "/", Equiplent do
     pipe_through :browser # Use the default browser stack
 
-    get "/", DashboardController, :show
     get "/signup", UserController, :new
     resources "/users", UserController, only: [:create]
     get "/login", SessionController, :new
     resources "/sessions", SessionController, only: [:create]
+  end
+
+  scope "/", Equiplent do
+    pipe_through [:browser, :require_authentication]
+
+    get "/", DashboardController, :show
   end
 
   # Other scopes may use custom stacks.
