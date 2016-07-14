@@ -3,6 +3,7 @@ defmodule Equiplent.Plug.Authenticate do
   import Phoenix.Controller
   alias Equiplent.Repo
   alias Equiplent.User
+  import Equiplent.Gettext
 
   def init(default), do: default
 
@@ -27,7 +28,7 @@ defmodule Equiplent.Plug.Authenticate do
 
   defp redirect_to_signin(conn) do
     conn
-      |> put_flash(:error, 'You need to be signed in to view this page')
+      |> put_flash(:error, gettext("You need to be signed in to view this page"))
       |> redirect(to: Equiplent.Router.Helpers.session_path(conn, :new))
       |> halt
   end

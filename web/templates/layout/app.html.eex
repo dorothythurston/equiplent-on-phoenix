@@ -16,7 +16,7 @@
       <header class="header">
         <nav role="navigation">
           <%= if logged_in?(@conn) do %>
-            <strong> <%= @current_user.email %> | <%= link "Sign Out", to: session_path(@conn, :delete, @current_user.id), method: :delete %></strong>
+            <strong> <%= @current_user.email %> | <%= link gettext("Sign Out"), to: session_path(@conn, :delete, @current_user.id), method: :delete %></strong>
           <% else %>
             <%= link "Log in", to: session_path(@conn, :new) %>
           <% end %>

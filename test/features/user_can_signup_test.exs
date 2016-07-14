@@ -10,7 +10,7 @@ defmodule AddUsersTest do
     fill_in("user[password_confirmation]", "password")
     submit
 
-    assert visible_page_text  =~ "Successfully signed up!"
+    assert visible_page_text  =~ gettext("Successfully signed up!")
     assert visible_page_text  =~ email
   end
 end

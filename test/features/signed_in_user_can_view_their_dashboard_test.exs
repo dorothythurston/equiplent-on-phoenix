@@ -6,6 +6,6 @@ defmodule ViewDashboardTest do
     user = insert(:user)
     user_navigate_to "/", as: user
 
-    assert visible_page_text =~ "Welcome"
+    assert visible_page_text =~ gettext("Welcome")
   end
 end

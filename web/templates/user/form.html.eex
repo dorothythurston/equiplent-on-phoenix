@@ -1,23 +1,23 @@
 <%= form_for @changeset, @action, fn f -> %>
 
   <%= if @changeset.action do %>
-    <p>Oops! Something went wrong.</p>
+    <p><%= gettext("Oops! Something went wrong.") %></p>
   <% end %>
 
   <div id="user-email">
-    <label>Email</label>
+    <label><%= gettext("Email") %></label>
     <%= text_input f, :email %>
     <%= error_tag f, :email %>
   </div>
 
   <div id="user-password">
-    <label>Password</label>
+    <label><%= gettext("Password") %></label>
     <%= password_input f, :password %>
     <%= error_tag f, :password %>
   </div>
 
   <div id="user-password-confirmation">
-    <label>Password Confirmation</label>
+    <label><%= gettext("Password Confirmation") %></label>
     <%= password_input f, :password_confirmation %>
     <%= error_tag f, :password_confirmation %>
   </div>

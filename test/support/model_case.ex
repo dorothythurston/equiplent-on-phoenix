@@ -22,6 +22,7 @@ defmodule Equiplent.ModelCase do
       import Ecto.Changeset
       import Ecto.Query
       import Equiplent.ModelCase
+      import Equiplent.Gettext
     end
   end
 

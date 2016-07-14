@@ -8,6 +8,7 @@ defmodule Equiplent.FeatureCase do
       use Hound.Helpers
 
       import FeatureHelpers
+      import Equiplent.Gettext
 
       hound_session
     end

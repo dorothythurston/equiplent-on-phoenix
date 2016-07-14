@@ -2,6 +2,7 @@ defmodule Equiplent.SessionController do
   use Equiplent.Web, :controller
   alias Equiplent.User
   alias Equiplent.Password
+  import Equiplent.Gettext
 
   plug :scrub_params, "user" when action in [:create]
 
@@ -17,13 +18,13 @@ defmodule Equiplent.SessionController do
   def delete(conn, _params) do
     conn
     |> delete_session(:current_user_id)
-    |> put_flash(:info, 'You have been logged out')
+    |> put_flash(:info, gettext("You have been logged out"))
     |> redirect(to: session_path(conn, :new))
   end
 
   defp sign_in(user, password, conn) when is_nil(user) do
     conn
-      |> put_flash(:error, 'Could not find a user with that username.')
+      |> put_flash(:error, gettext("Could not find a user with that username."))
       |> render("new.html", changeset: User.changeset(%User{}))
   end
 
@@ -31,11 +32,11 @@ defmodule Equiplent.SessionController do
     if Password.authenticate(password, user.password_digest) do
       conn
         |> put_session(:current_user_id, user.id)
-        |> put_flash(:info, 'Welcome!')
+        |> put_flash(:info, gettext("Welcome!"))
         |> redirect(to: dashboard_path(conn, :show))
     else
       conn
-        |> put_flash(:error, 'Username or password are incorrect.')
+        |> put_flash(:error, gettext("Username or password are incorrect."))
         |> render("new.html", changeset: User.changeset(%User{}))
     end
   end

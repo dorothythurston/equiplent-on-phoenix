@@ -24,14 +24,14 @@ defmodule Equiplent.UserTest do
     changeset = User.changeset(%User{}, invalid_attrs)
 
     assert {:error, changeset} = Equiplent.Repo.insert(changeset)
-    assert changeset.errors[:email] == {"has already been taken", []}
+    assert changeset.errors[:email] == { gettext("email has already been taken"), []}
   end
 
   test "changeset is invalid if email does not match email format" do
     changeset = User.changeset(%User{}, %{email: "notanemail"})
 
     assert {:error, changeset} = Equiplent.Repo.insert(changeset)
-    assert changeset.errors[:email] == {"has invalid format", []}
+    assert changeset.errors[:email] == { gettext("email has invalid format"), []}
   end
 
   test "changeset is invalid if password does not match password_confirmation" do
@@ -39,6 +39,6 @@ defmodule Equiplent.UserTest do
     changeset = User.changeset(%User{}, invalid_attrs)
 
     assert {:error, changeset} = Equiplent.Repo.insert(changeset)
-    assert changeset.errors[:password_confirmation] == {"passwords do not match", []}
+    assert changeset.errors[:password_confirmation] == { gettext("passwords do not match"), []}
   end
 end

@@ -1,7 +1,7 @@
 <%= form_for @changeset, @action, fn f -> %>
 
   <%= if @changeset.action do %>
-    <p>Oops! Something went wrong.</p>
+    <p><%= gettext("Oops! Something went wrong.") %></p>
   <% end %>
 
   <div id="user-email">
