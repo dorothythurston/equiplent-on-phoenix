@@ -14,6 +14,13 @@ defmodule Equiplent.SessionController do
       |> sign_in(user_params["password"], conn)
   end
 
+  def delete(conn, _params) do
+    conn
+    |> delete_session(:current_user_id)
+    |> put_flash(:info, 'You have been logged out')
+    |> redirect(to: session_path(conn, :new))
+  end
+
   defp sign_in(user, password, conn) when is_nil(user) do
     conn
       |> put_flash(:error, 'Could not find a user with that username.')

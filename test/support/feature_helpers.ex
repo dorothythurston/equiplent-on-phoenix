@@ -28,4 +28,8 @@ defmodule FeatureHelpers do
       %{uri | query: query}
     end
   end
+
+  def click_on(text) do
+    click {:link_text, text}
+  end
 end

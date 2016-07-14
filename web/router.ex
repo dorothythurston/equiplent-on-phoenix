@@ -27,7 +27,7 @@ defmodule Equiplent.Router do
     get "/signup", UserController, :new
     resources "/users", UserController, only: [:create]
     get "/login", SessionController, :new
-    resources "/sessions", SessionController, only: [:create]
+    resources "/sessions", SessionController, only: [:create, :delete]
   end
 
   scope "/", Equiplent do
