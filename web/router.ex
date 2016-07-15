@@ -7,10 +7,6 @@ defmodule Equiplent.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-
-    if Mix.env == :test do
-      plug Equiplent.Plug.SessionBackdoor
-    end
   end
 
   pipeline :api do
@@ -18,6 +14,10 @@ defmodule Equiplent.Router do
   end
 
   pipeline :require_authentication do
+    if Mix.env == :test do
+      plug Equiplent.Plug.SessionBackdoor
+    end
+
     plug Equiplent.Plug.Authenticate
   end
 

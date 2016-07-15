@@ -1,5 +1,5 @@
 defmodule Equiplent.FeatureCase do
-  use ExUnit.CaseTemplate
+  use ExUnit.CaseTemplate, async: false
 
   using do
     quote do
