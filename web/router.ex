@@ -34,7 +34,10 @@ defmodule Equiplent.Router do
     pipe_through [:browser, :require_authentication]
 
     get "/", DashboardController, :show
-    resources "/items", ItemController, only: [:create, :new, :show]
+    resources "/items", ItemController, only: [:create, :new, :show] do
+      resources "/reservations", ReservationController, only: [:create, :new]
+    end
+    resources "/reservations", ReservationController, only: [:show]
   end
 
   # Other scopes may use custom stacks.

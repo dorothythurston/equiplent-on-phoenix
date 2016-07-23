@@ -8,4 +8,11 @@ defmodule Equiplent.Factory do
       password_digest: "password"
     }
   end
+
+  def item_factory do
+    %Equiplent.Item{
+      name: "some name",
+      user: build(:user),
+    }
+  end
 end

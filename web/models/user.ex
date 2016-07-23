@@ -11,6 +11,7 @@ defmodule Equiplent.User do
     field :password_confirmation, :string, virtual: true
 
     has_many :items, Equiplent.Item
+    has_many :reservations, Equiplent.Reservation
 
     timestamps
   end

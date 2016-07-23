@@ -1,0 +1,11 @@
+<h3><%= gettext("Reservation Details:") %> </h3>
+<div data-role="reservation">
+  <div>
+    <%= gettext("Starts on:") %>
+    <%= @reservation.begins_at %>
+  </div>
+  <div>
+    <%= gettext("Ends on") %>
+    <%= @reservation.ends_at %>
+  </div>
+</div>
