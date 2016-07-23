@@ -1,3 +1,4 @@
 <div data-role="item">
   <%= @item.name %>
+ <%= link gettext("Reserve Item"), to: item_reservation_request_path(@conn, :new, @item) %>
 </div>

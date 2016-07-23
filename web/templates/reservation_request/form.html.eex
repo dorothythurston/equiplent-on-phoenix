@@ -1,0 +1,22 @@
+<%= form_for @changeset, item_reservation_request_path(@conn, :create, @item), fn f -> %>
+  <div>
+    <%= @item.name %>
+  </div>
+  <div>
+    <%= gettext("Start:") %>
+    <label>
+      <%= datetime_select f, :requested_start_date %>
+      <%= error_tag f, :requested_start_date %>
+    </label>
+  </div>
+  <div>
+    <%= gettext("End:") %>
+    <label>
+      <%= datetime_select f, :requested_end_date %>
+      <%= error_tag f, :requested_end_date %>
+    </label>
+  </div>
+  <div>
+    <%= submit gettext("Request Reservation") %>
+  </div>
+<% end %>

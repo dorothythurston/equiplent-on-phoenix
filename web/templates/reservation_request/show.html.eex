@@ -1,0 +1,14 @@
+<h3><%= gettext("Request Details:") %> </h3>
+<div data-role="reservation_request">
+  <div>
+    <%= gettext("Starts on:") %>
+    <%= @reservation_request.requested_start_date %>
+  </div>
+  <div>
+    <%= gettext("Ends on") %>
+    <%= @reservation_request.requested_end_date %>
+  </div>
+  <div>
+    <%= gettext("Status:") %>
+    <%= @reservation_request.status %>
+</div>
