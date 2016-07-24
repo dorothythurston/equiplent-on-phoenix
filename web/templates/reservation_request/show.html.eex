@@ -11,4 +11,10 @@
   <div>
     <%= gettext("Status:") %>
     <%= @reservation_request.status %>
+  </div>
+  <%= if approved?(@reservation_request) do %>
+    <%= link gettext("View Reservation"), to: reservation_path(@conn, :show, @reservation_request) %>
+  <%= else %>
+    <%= link gettext("Approve"), to: reservation_request_reservation_path(@conn, :create, @reservation_request), method: :create %>
+  <% end %>
 </div>

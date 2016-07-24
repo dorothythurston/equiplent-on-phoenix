@@ -7,6 +7,7 @@ defmodule Equiplent.ReservationRequest do
     field :status, :string
     belongs_to :user, Equiplent.User
     belongs_to :item, Equiplent.Item
+    has_one :reservation, Equiplent.Reservation
 
     timestamps()
   end

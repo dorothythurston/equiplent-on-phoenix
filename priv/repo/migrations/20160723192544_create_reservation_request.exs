@@ -12,5 +12,6 @@ defmodule Equiplent.Repo.Migrations.CreateReservationRequest do
       timestamps()
     end
     create index(:reservation_requests, [:user_id])
+    create index(:reservation_requests, [:item_id])
   end
 end

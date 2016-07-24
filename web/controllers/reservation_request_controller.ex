@@ -2,6 +2,7 @@ defmodule Equiplent.ReservationRequestController do
   use Equiplent.Web, :controller
 
   alias Equiplent.ReservationRequest
+  alias Equiplent.ReservationRequest
   alias Equiplent.Item
   import Equiplent.Gettext
 

@@ -12,6 +12,7 @@ defmodule Equiplent.User do
 
     has_many :items, Equiplent.Item
     has_many :reservation_requests, Equiplent.ReservationRequest
+    has_many :reservations, Equiplent.Reservation
 
     timestamps
   end
