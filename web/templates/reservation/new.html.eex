@@ -1,0 +1,8 @@
+<h1><%= gettext("Request a Reservation") %></h1>
+
+<%= render "form.html",
+  changeset: @changeset,
+  conn: @conn,
+  action: item_reservation_path(@conn, :create, @item),
+  item: @item,
+  button_text: gettext("Create") %>
