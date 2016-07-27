@@ -1,6 +1,5 @@
 defmodule Equiplent.User do
   use Equiplent.Web, :model
-  import Comeonin.Bcrypt, only: [hashpwsalt: 1]
   alias Equiplent.Password
   import Equiplent.Gettext
 
