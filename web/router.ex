@@ -37,7 +37,9 @@ defmodule Equiplent.Router do
     resources "/items", ItemController, only: [:create, :new, :show] do
       resources "/reservations", ReservationController, only: [:create, :new]
     end
-    resources "/reservations", ReservationController, only: [:show]
+    resources "/reservations", ReservationController, only: [:show] do
+      resources "/approvals", ReservationApprovalController, only: [:create], as: "approval"
+    end
   end
 
   # Other scopes may use custom stacks.

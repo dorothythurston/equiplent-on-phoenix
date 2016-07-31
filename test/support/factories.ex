@@ -15,4 +15,13 @@ defmodule Equiplent.Factory do
       user: build(:user),
     }
   end
+
+  def reservation_factory do
+    %Equiplent.Reservation{
+      user: build(:user),
+      item: build(:item),
+      begins_at: Ecto.DateTime.from_erl(Equiplent.Reservation.start_of_hour),
+      ends_at: Ecto.DateTime.from_erl(Equiplent.Reservation.end_of_hour)
+    }
+  end
 end

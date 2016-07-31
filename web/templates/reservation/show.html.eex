@@ -12,3 +12,5 @@
     <%= gettext("Status:") %>
     <%= @reservation.status %>
 </div>
+
+<%= link gettext("Approve Reservation"), to: reservation_approval_path(@conn, :create, @reservation), method: :post %>

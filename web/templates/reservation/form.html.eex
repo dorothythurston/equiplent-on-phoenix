@@ -5,14 +5,14 @@
   <div>
     <%= gettext("Start:") %>
     <label>
-      <%= datetime_select f, :begins_at, default: start_of_hour %>
+      <%= datetime_select f, :begins_at, default: Equiplent.Reservation.start_of_hour %>
       <%= error_tag f, :begins_at %>
     </label>
   </div>
   <div>
     <%= gettext("End:") %>
     <label>
-      <%= datetime_select f, :ends_at, default: end_of_hour %>
+      <%= datetime_select f, :ends_at, default: Equiplent.Reservation.end_of_hour %>
       <%= error_tag f, :ends_at %>
     </label>
   </div>
